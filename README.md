@@ -20,9 +20,11 @@ git clone https://github.com/GuySha123/garage_curd_python_json.git
 
 ```
 py -m virtualenv env
+```
 
 or
 
+```
 python -m virtualenv env
 ```
 
@@ -36,8 +38,10 @@ pip install -r requirements.txt
 
 ```
 py ./app.py
+```
 
 or
 
+```
 python ./app.py
 ```
