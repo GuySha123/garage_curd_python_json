@@ -1,6 +1,6 @@
 # Garage with json files using Python
 
-A simple program to practice CRUD with json files
+A simple program to practice Python CRUD with json files
 
 ## Functions
 
@@ -46,7 +46,7 @@ A simple program to practice CRUD with json files
     python -m virtualenv env
     ```
 
-4. Active env:
+4. Activate env:
     ```
     .\env\Scripts\activate
     ```
