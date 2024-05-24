@@ -1,9 +1,0 @@
-{
-    "cars": [
-        {
-            "car_type": "ford",
-            "color": "red",
-            "model": 2011
-        }
-    ]
-}
