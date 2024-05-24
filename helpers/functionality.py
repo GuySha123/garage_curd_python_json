@@ -9,7 +9,7 @@ def print_cars_info(cars_data):
 
     ic(f"Amount of cars in the garage: {len(cars)}")
     for index, car in enumerate(cars, start=1):
-        ic(f"({index}) Type: {car["car_type"]}, Color: {car["color"]}, Model: {car["model"]}")
+        ic(f"({index}) Type: {car['car_type']}, Color: {car['color']}, Model: {car['model']}")
 
 def add_car(cars_data):
     cars = cars_data.get("cars", [])
@@ -35,7 +35,7 @@ def del_car(cars_data):
     car_index = find_car(cars_data)
     if 0 <= car_index < len(cars_data.get("cars", [])):
         removed_car = cars_data["cars"].pop(car_index)
-        ic(f"Deleted car - Type: {removed_car["car_type"]}, Color: {removed_car["color"]}, Model: {removed_car["model"]}")
+        ic(f"Deleted car - Type: {removed_car['car_type']}, Color: {removed_car['color']}, Model: {removed_car['model']}")
     else:
         ic("Invalid selection")
 
