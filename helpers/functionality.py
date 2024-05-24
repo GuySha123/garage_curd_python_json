@@ -13,8 +13,17 @@ def print_cars_info(cars_data):
 
 def add_car(cars_data):
     cars = cars_data.get("cars", [])
-    new_car = {"car_type": input("Car type? "), "color": input("Car color? "), "model": int(input("Car model (year only)? "))}
+    new_car = {"car_type": input("Car type? "), "color": input("Car color? ")}
+    
+    while True:
+        try:
+            new_car["model"] = int(input("Car model (year only)? "))
+            break
+        except ValueError:
+            ic("Invalid input. Please enter a valid year.")
+
     cars.append(new_car)
+
     ic(f"New car added: Type: {new_car['car_type']}, Color: {new_car['color']}, Model: {new_car['model']}")
 
 def find_car(cars_data):
@@ -37,8 +46,16 @@ def upd_car(cars_data):
     
     if 0 <= car_index < len(cars):
         old_car = cars[car_index]
-        cars[car_index] = {"car_type": input("Car type? "), "color": input("Car color? "), "model": int(input("Car model (year only)? "))}
-        new_car = cars[car_index]
+        new_car = {"car_type": input("Car type? "), "color": input("Car color? ")}
+        
+        while True:
+            try:
+                new_car["model"] = int(input("Car model (year only)? "))
+                break
+            except ValueError:
+                print("Invalid input. Please enter a valid year.")
+        
+        cars[car_index] = new_car
         
         ic(f"Updated car from - Type: {old_car['car_type']}, Color: {old_car['color']}, Model: {old_car['model']}")
         ic(f"Updated car to - Type: {new_car['car_type']}, Color: {new_car['color']}, Model: {new_car['model']}")
