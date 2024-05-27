@@ -21,24 +21,29 @@ if __name__ == '__main__':
     clear_screen()
     cars_data = load_cars_from_json('data/cars_list.json')
     while True:
-        user_selection = menu()
-        if user_selection == Actions.EXIT: exit()
-        if user_selection == Actions.INFO:
-            clear_screen() 
-            print_cars_info(cars_data)
-        if user_selection == Actions.ADD:
-            clear_screen() 
-            add_car(cars_data)
-            save_cars_to_json(cars_data, 'data/cars_list.json')
-        if user_selection == Actions.DELETE: 
-            clear_screen()
-            del_car(cars_data)
-            save_cars_to_json(cars_data, 'data/cars_list.json')
-        if user_selection == Actions.UPDATE: 
-            clear_screen()
-            upd_car(cars_data)
-            save_cars_to_json(cars_data, 'data/cars_list.json')
-        if user_selection == Actions.DELETE_CARS_FILE:
-            clear_screen()
-            del_cars_file('data/cars_list.json')
-            cars_data = {"cars": []}
+        try:
+            user_selection = menu()
+            if user_selection == Actions.EXIT: exit()
+            if user_selection == Actions.INFO:
+                clear_screen() 
+                print_cars_info(cars_data)
+            if user_selection == Actions.ADD:
+                clear_screen() 
+                add_car(cars_data)
+                save_cars_to_json(cars_data, 'data/cars_list.json')
+            if user_selection == Actions.DELETE: 
+                clear_screen()
+                del_car(cars_data)
+                save_cars_to_json(cars_data, 'data/cars_list.json')
+            if user_selection == Actions.UPDATE: 
+                clear_screen()
+                upd_car(cars_data)
+                save_cars_to_json(cars_data, 'data/cars_list.json')
+            if user_selection == Actions.DELETE_CARS_FILE:
+                clear_screen()
+                del_cars_file('data/cars_list.json')
+                cars_data = {"cars": []}
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
