@@ -22,7 +22,7 @@ if __name__ == '__main__':
     cars_data = load_cars_from_json('data/cars_list.json')
     while True:
         try:
-            user_selection = menu()
+            user_selection = menu()       
             if user_selection == Actions.EXIT: exit()
             if user_selection == Actions.INFO:
                 clear_screen() 
@@ -44,6 +44,7 @@ if __name__ == '__main__':
                 del_cars_file('data/cars_list.json')
                 cars_data = {"cars": []}
         except ValueError:
+            clear_screen()
             print("Invalid input. Please enter a valid number.")
         except Exception as e:
             print(f"An error occurred: {e}")
